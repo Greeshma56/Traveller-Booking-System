@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Goa Gallery</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    img {
+      width: 70%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Goa Trip Gallery</h2>
+
+  <img id="galleryImg" src="images/goa1.jpg">
+
+  <br>
+
+  <button onclick="prev()">⬅ Prev</button>
+  <button onclick="next()">Next ➡</button>
+
+  <script>
+    let images = [
+      "images/goa1.jpg",
+      "images/goa2.jpg",
+      "images/goa3.jpg",
+      "images/goa4.jpg",
+      "images/goa5.jpg",
+      "images/goa6.jpg",
+      "images/goa7.jpg",
+      "images/goa8.jpg"
+    ];
+
+    let index = 0;
+
+    function next() {
+      index = (index + 1) % images.length;
+      document.getElementById("galleryImg").src = images[index];
+    }
+
+    function prev() {
+      index = (index - 1 + images.length) % images.length;
+      document.getElementById("galleryImg").src = images[index];
+    }
+  </script>
+
+</body>
+</html>

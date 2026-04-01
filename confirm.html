@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-body">
+
+  <div class="confirm-box">
+    <h2>🎉 Booking Successful!</h2>
+
+    <p><strong>Name:</strong> <span id="cname"></span></p>
+    <p><strong>Email:</strong> <span id="cemail"></span></p>
+    <p><strong>Phone:</strong> <span id="cphone"></span></p>
+    <p><strong>Trip:</strong> <span id="ctrip"></span></p>
+
+    <a href="index.html" class="btn btn-gallery">Back to Home</a>
+  </div>
+
+  <script>
+    document.getElementById("cname").innerText = localStorage.getItem("name");
+    document.getElementById("cemail").innerText = localStorage.getItem("email");
+    document.getElementById("cphone").innerText = localStorage.getItem("phone");
+    document.getElementById("ctrip").innerText = localStorage.getItem("trip");
+  </script>
+
+</body>
+</html>

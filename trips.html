@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Trips</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="logo">Traveller Booking</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trips.html">Trips</a>
+            <a href="booking.html">Book Now</a>
+        </nav>
+    </header>
+
+    <section class="trips-section">
+        <h2>Available Trips</h2>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search trips (Goa, Kerala, Manali...)" 
+          onkeyup="searchTrips()" 
+          class="search-box">
+          <select id="priceFilter" onchange="filterByPrice()" class="price-filter">
+            <option value="all">All Prices</option>
+            <option value="low">Below ₹15,000</option>
+            <option value="mid">₹15,000 – ₹20,000</option>
+            <option value="high">Above ₹20,000</option>
+            </select>
+
+
+        <div class="trips-container">
+
+            <!-- Trip 1 -->
+            <div class="trip-card" data-price="12000">
+                <img src="images\goa1.jpg" alt="Goa Trip">
+                <h3>Goa Beach Vacation</h3>
+                <p>Price: ₹12,000</p>
+                <p>Date: 15 March 2025</p>
+                <a href="booking.html?trip=Goa Beach Vacation" class="btn btn-book">Book Now</a>
+                <a href="goa-gallery.html" class="btn btn-gallery">View Gallery</a>
+
+            </div>
+
+            <!-- Trip 2 -->
+            <div class="trip-card" data-price="18500">
+                <img src="images/kerala1.jpg" alt="Kerala Trip">
+                <h3>Kerala Backwaters</h3>
+                <p>Price: ₹18,500</p>
+                <p>Date: 20 April 2025</p>
+                <a href="booking.html?trip=Kerala Backwaters" class="btn btn-book">Book Now</a>
+                <a href="kerala-gallery.html" class="btn btn-gallery">View Gallery</a>
+
+            </div>
+
+            <!-- Trip 3 -->
+            <div class="trip-card" data-price="22000">
+                <img src="images/manali1.jpg" alt="Manali Trip">
+                <h3>Manali Adventure</h3>
+                <p>Price: ₹22,000</p>
+                <p>Date: 10 May 2025</p>
+                <a href="booking.html?trip=Manali Adventure" class="btn btn-book">Book Now</a>
+                <a href="manali-gallery.html" class="btn btn-gallery">View Gallery</a>
+            </div>
+
+        </div>
+    </section>
+<script src="script.js"></script>
+
+</body>
+</html>

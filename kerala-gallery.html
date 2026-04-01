@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kerala Gallery</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    img {
+      width: 70%;
+      max-width: 600px;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Kerala Trip Gallery</h2>
+
+  <img id="galleryImg" src="images/kerala1.jpg">
+
+  <br>
+
+  <button onclick="prev()">⬅ Prev</button>
+  <button onclick="next()">Next ➡</button>
+
+  <script>
+    let images = [
+      "images/kerala1.jpg",
+      "images/kerala2.jpg",
+      "images/kerala3.jpg",
+      "images/kerala4.jpg",
+      "images/kerala5.jpg",
+      "images/kerala6.jpg",
+      "images/kerala7.jpg"
+    ];
+
+    let index = 0;
+
+    function next() {
+      index = (index + 1) % images.length;
+      document.getElementById("galleryImg").src = images[index];
+    }
+
+    function prev() {
+      index = (index - 1 + images.length) % images.length;
+      document.getElementById("galleryImg").src = images[index];
+    }
+  </script>
+
+</body>
+</html>

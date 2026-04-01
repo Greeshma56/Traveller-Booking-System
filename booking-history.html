@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-body">
+
+  <div class="history-box">
+    <h2>📜 Booking History</h2>
+
+    <div id="historyList"></div>
+
+    <a href="index.html" class="btn btn-gallery">Back to Home</a>
+  </div>
+
+  <script defer>
+    const historyDiv = document.getElementById("historyList");
+    const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    if (bookings.length === 0) {
+      historyDiv.innerHTML = "<p>No bookings yet.</p>";
+    } else {
+      bookings.forEach((b, i) => {
+        historyDiv.innerHTML += `
+          <div class="history-card">
+            <p><strong>Name:</strong> ${b.name}</p>
+            <p><strong>Email:</strong> ${b.email}</p>
+            <p><strong>Phone:</strong> ${b.phone}</p>
+            <p><strong>Trip:</strong> ${b.trip}</p>
+          </div>
+        `;
+      });
+    }
+  </script>
+
+</body>
+</html>
